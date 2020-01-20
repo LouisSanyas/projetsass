@@ -1,0 +1,32 @@
+.header {
+    height: 95vh;                       /*95% of the viewport*/
+    background-image: linear-gradient(
+        to right bottom
+    ,rgba($color-primary-light, 0.8),                       /*de gauche a droite en bas la couleur s'assombrit*/
+     rgba($color-primary-dark,0.8)), 
+     url(../img/hero.jpg); 
+    background-size: cover;             /*peut importe la taille du viewport, l'image s'adapte*/
+    background-position: top;           /*quand on change la taille de l'ecran le haut de l'image n'est pas crop*/
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);  /**/
+
+    &__logo-box {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+    }
+
+    &__logo {
+        height: 6.5rem;
+        width: 150px;
+    }
+    
+    &__text-box {
+        position: absolute;     /*Il faut prendre en compte que toutes les valeures sont en fonction du parent de cet element*/
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

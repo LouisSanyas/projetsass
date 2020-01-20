@@ -1,0 +1,70 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .3);
+    background-color: rgba($color-white, 65%);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    background-image: url(../img/video.mp4);
+
+    & > * {
+        transform: skewX(12deg);
+    }
+
+    &__shape {
+        height: 15rem;
+        width: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%); //le premier chiffre sera le radius du cercle (50% de 15rem)
+        //pour utiliser le style "shape-outside" il faut au préalable avoir deteminé une width/height et la position float
+
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-3.5rem) scale(1.4);  //l'img est initialement a cette emplacement.
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1); //une fois hover on change le scale de l'image pour faire une effet de zoom out
+        filter: blur(3px) brightness(80%); //cela fait l'effet assombrit et flou
+        backface-visibility: hidden;
+    }
+
+    
+}

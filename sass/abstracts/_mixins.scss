@@ -1,0 +1,9 @@
+
+@mixin clearfix {           
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+//Le clearfix sert a resoudre les problemes d'alignement du au "float"
