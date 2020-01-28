@@ -37,6 +37,9 @@ $breakpoint arguement choices:
 - tab-port
 - tab-land
 - big-desktop
+
+ORDER: base, typographt > general layout + grid > page layout > components
+
 */
 
 @mixin respond($breakpoint) {
